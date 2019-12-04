@@ -92,17 +92,17 @@ def inference_prop(fol,eng):
     return inf 
 
 def inference_so(fol,eng):
-    prop1 = min(fol[1],eng[1])
-    prop2 = min(fol[2],eng[1])
-    prop3 = min(fol[2],eng[0])
-    inf = max([prop1,prop2,prop3])
+    so1 = min(fol[1],eng[1])
+    so2 = min(fol[2],eng[1])
+    so3 = min(fol[2],eng[0])
+    inf = max([so1,so2,so3])
     return inf
 
 def inference_meh(fol,eng):
-    prop1 = min(fol[0],eng[2])
-    prop2 = min(fol[1],eng[2])
-    prop3 = min(fol[2],eng[2])
-    inf = max([prop1,prop2,prop3])
+    meh1 = min(fol[0],eng[2])
+    meh2 = min(fol[1],eng[2])
+    meh3 = min(fol[2],eng[2])
+    inf = max([meh1,meh2,meh3])
     return inf
 
 def defuzzyfication(prop,so,meh):
@@ -163,8 +163,9 @@ def savetocsv(toptwenty):
 
 data = readCSV()
 defz = catch_defuz(data)
+
+print (defz)
 printdat(data,defz)
 srt = top_twenty(defz)
 print ("top twenty : ",srt)
-
 savetocsv(srt)
