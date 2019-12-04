@@ -154,7 +154,7 @@ def top_twenty(defz):
 
 
 def savetocsv(toptwenty):
-    with open('hasil.csv','w') as file:
+    with open('chosen.csv','w') as file:
         writer = csv.writer(file, lineterminator='\n')
         for i in toptwenty:
             writer.writerow([i])
